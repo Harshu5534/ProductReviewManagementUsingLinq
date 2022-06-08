@@ -31,6 +31,10 @@ namespace ProductReviewManagement
             var result = list.OrderByDescending(x => x.Rating).Skip(5).ToList();
             Display(result);
         }
+        public void GetAllRecords(List<ProductReview> list)
+        {
+            var result = list.OrderBy(x => x.ProductID).Select(x => new { productId = x.ProductID, Review = x.Review });
+        }
         public void Display(List<ProductReview> list)
         {
             //Display list
