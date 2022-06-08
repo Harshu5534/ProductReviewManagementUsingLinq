@@ -7,7 +7,7 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("---------------Welcome To Product Review Management-----------");
             //List for product review
-            List<ProductReview> reviewList=new List<ProductReview>();
+            List<ProductReview> reviewList = new List<ProductReview>();
             reviewList.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 5, Review = "Good", IsLike = true });
             reviewList.Add(new ProductReview() { ProductID = 2, UserID = 1, Rating = 7, Review = "Bad", IsLike = false });
             reviewList.Add(new ProductReview() { ProductID = 3, UserID = 1, Rating = 4, Review = "Good", IsLike = true });
@@ -33,12 +33,29 @@ namespace ProductReviewManagement
             reviewList.Add(new ProductReview() { ProductID = 23, UserID = 1, Rating = 7, Review = "Bad", IsLike = false });
             reviewList.Add(new ProductReview() { ProductID = 24, UserID = 1, Rating = 3, Review = "Good", IsLike = true });
             reviewList.Add(new ProductReview() { ProductID = 25, UserID = 1, Rating = 6, Review = "Good", IsLike = false });
-
-            //Display list
-            foreach (var product in reviewList)
+            
+            bool end = true;
+            while (end)
             {
-                Console.WriteLine("----------------------------------------");
-                Console.WriteLine(product.ProductID + " | " + product.UserID + " | " + product.Rating + " | " + product.Review + " | " + product.IsLike);
+                Console.WriteLine("Select Option\n1.CreateProductReview\n2.Retrive Top 3 Review\n3.End Of Program");
+                Console.WriteLine("\nEnter Option For Exicute The Program");
+                int option = Convert.ToInt16(Console.ReadLine());
+                Operations operations = new Operations();
+                switch (option)
+                {
+                    case 1:
+                        operations.Display(reviewList);
+                        break;
+                    case 2:
+                        operations.GetTop3Records(reviewList);
+                        break;
+                    case 3:
+                        end = false;
+                        break;
+                    default:
+                        Console.WriteLine("--------------Please Enter the Correct option--------------");
+                        break;
+                }
             }
         }
     }
