@@ -59,7 +59,7 @@ namespace ProductReviewManagement
                         end = false;
                         break;
                     default:
-                        Console.WriteLine("--------------Please Enter the Correct option--------------");
+                        Console.WriteLine("\n--------------Please Enter the Correct option--------------\n");
                         break;
                 }
             }
