@@ -85,6 +85,14 @@ namespace ProductReviewManagement
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
             }
+            IEnumerable<DataRow> rows = dt.AsEnumerable().Where(r => r.Field<string>("Islike") == "True");
+            Console.WriteLine("\n-----------Data from datatable who's islike value is true------------");
+            
+            foreach (DataRow row in rows)
+            {
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
+            }
         }
     }
 }
