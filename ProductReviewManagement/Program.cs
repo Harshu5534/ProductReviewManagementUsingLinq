@@ -37,7 +37,7 @@ namespace ProductReviewManagement
             bool end = true;
             while (end)
             {
-                Console.WriteLine("\nSelect Option\n1.CreateProductReview\n2.Retrive Top 3 Review\n3.Retrive Top 3 Record With Product Id\n4.Get Top Records Count With ProductId\n5.End Of Program");
+                Console.WriteLine("\nSelect Option\n1.CreateProductReview\n2.Retrive Top 3 Review\n3.Retrive Top 3 Record With Product Id\n4.Get Top Records Count With ProductId\n5.Skip Top 5 Records\n6.End Of Program");
                 Console.WriteLine("\nEnter Option For Exicute The Program");
                 int option = Convert.ToInt16(Console.ReadLine());
                 Operations operations = new Operations();
@@ -56,6 +56,9 @@ namespace ProductReviewManagement
                         operations.GetTopRecordsCountWithProductId(reviewList);
                         break;
                     case 5:
+                        operations.SkipTop5Records(reviewList);
+                        break;
+                    case 6:
                         end = false;
                         break;
                     default:
