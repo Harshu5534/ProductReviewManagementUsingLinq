@@ -38,7 +38,7 @@ namespace ProductReviewManagement
             while (end)
             {
                 Console.WriteLine("\nSelect Option\n1.CreateProductReview\n2.Retrive Top 3 Review\n3.Retrive Top 3 Record With Product Id\n4.Get Top Records Count With ProductId\n5.Skip Top 5 Records" +
-                    "\n6.Get All Records\n7.Create Data Table\n8.Find average rating\n9.End Of Program");
+                    "\n6.Get All Records\n7.Create Data Table\n8.Find average rating\n9.Find Nice review Data\n10.End Of Program");
                 Console.WriteLine("\nEnter Option For Exicute The Program");
                 int option = Convert.ToInt16(Console.ReadLine());
                 Operations operations = new Operations();
@@ -69,6 +69,9 @@ namespace ProductReviewManagement
                         operations.AvgRating(reviewList);
                         break;
                     case 9:
+                        operations.NiceReview(reviewList);
+                        break;
+                    case 10:
                         end = false;
                         break;
                     default:
