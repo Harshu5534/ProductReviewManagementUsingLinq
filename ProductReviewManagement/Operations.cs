@@ -13,6 +13,11 @@ namespace ProductReviewManagement
             var result = list.OrderByDescending(x=>x.Rating).Take(3).ToList();
             Display(result);
         }
+        public void GetTopRecordsWithProductId(List<ProductReview> list)
+        {
+            var result=list.Where(x => x.Rating > 3 && (x.ProductID == 1 || x.ProductID == 4 || x.ProductID == 9)).Take(3).ToList();
+            Display(result);
+        }
         public void Display(List<ProductReview> list)
         {
             //Display list
