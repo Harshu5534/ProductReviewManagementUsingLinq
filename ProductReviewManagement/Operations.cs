@@ -111,5 +111,14 @@ namespace ProductReviewManagement
                       + " " + "Rating:- " + data.Rating + " " + "Review:- " + data.Review + " " + "IsLike:- " + data.IsLike);
             }
         }
+        public void OneIdData(List<ProductReview> list)
+        {
+            var result = (from productReviews in list where productReviews.UserID == 10 select productReviews).OrderBy(x => x.Rating);
+            foreach (var data in result)
+            {
+                Console.WriteLine("ProductID:- " + data.ProductID + " " + "UserID:- " + data.UserID
+                      + " " + "Rating:- " + data.Rating + " " + "Review:- " + data.Review + " " + "IsLike:- " + data.IsLike);
+            }
+        }
     }
 }

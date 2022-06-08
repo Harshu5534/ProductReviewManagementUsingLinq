@@ -27,18 +27,18 @@ namespace ProductReviewManagement
             reviewList.Add(new ProductReview() { ProductID = 17, UserID = 1, Rating = 1, Review = "Bad", IsLike = false });
             reviewList.Add(new ProductReview() { ProductID = 18, UserID = 1, Rating = 10, Review = "Good", IsLike = false });
             reviewList.Add(new ProductReview() { ProductID = 19, UserID = 1, Rating = 9, Review = "Very Nice", IsLike = true });
-            reviewList.Add(new ProductReview() { ProductID = 20, UserID = 1, Rating = 10, Review = "Nice", IsLike = true });
-            reviewList.Add(new ProductReview() { ProductID = 21, UserID = 1, Rating = 8, Review = "Nice", IsLike = true });
-            reviewList.Add(new ProductReview() { ProductID = 22, UserID = 1, Rating = 5, Review = "Good", IsLike = true });
-            reviewList.Add(new ProductReview() { ProductID = 23, UserID = 1, Rating = 7, Review = "Bad", IsLike = false });
-            reviewList.Add(new ProductReview() { ProductID = 24, UserID = 1, Rating = 3, Review = "Good", IsLike = true });
-            reviewList.Add(new ProductReview() { ProductID = 25, UserID = 1, Rating = 6, Review = "Good", IsLike = false });
+            reviewList.Add(new ProductReview() { ProductID = 20, UserID = 10, Rating = 10, Review = "Nice", IsLike = true });
+            reviewList.Add(new ProductReview() { ProductID = 21, UserID = 10, Rating = 8, Review = "Nice", IsLike = true });
+            reviewList.Add(new ProductReview() { ProductID = 22, UserID = 10, Rating = 5, Review = "Good", IsLike = true });
+            reviewList.Add(new ProductReview() { ProductID = 23, UserID = 10, Rating = 7, Review = "Bad", IsLike = false });
+            reviewList.Add(new ProductReview() { ProductID = 24, UserID = 10, Rating = 3, Review = "Good", IsLike = true });
+            reviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating = 6, Review = "Good", IsLike = false });
             
             bool end = true;
             while (end)
             {
                 Console.WriteLine("\nSelect Option\n1.CreateProductReview\n2.Retrive Top 3 Review\n3.Retrive Top 3 Record With Product Id\n4.Get Top Records Count With ProductId\n5.Skip Top 5 Records" +
-                    "\n6.Get All Records\n7.Create Data Table\n8.Find average rating\n9.Find Nice review Data\n10.End Of Program");
+                    "\n6.Get All Records\n7.Create Data Table\n8.Find average rating\n9.Find Nice review Data\n10.Retrive data who's Id is 10\n11.End Of Program");
                 Console.WriteLine("\nEnter Option For Exicute The Program");
                 int option = Convert.ToInt16(Console.ReadLine());
                 Operations operations = new Operations();
@@ -72,6 +72,9 @@ namespace ProductReviewManagement
                         operations.NiceReview(reviewList);
                         break;
                     case 10:
+                        operations.OneIdData(reviewList);
+                        break;
+                    case 11:
                         end = false;
                         break;
                     default:
