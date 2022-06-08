@@ -94,5 +94,13 @@ namespace ProductReviewManagement
                 Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
             }
         }
+        public void AvgRating(List<ProductReview> list)
+        {
+            var result = list.GroupBy(info => info.ProductID).Select(group => new { products = group.Key, Count = group.Average(a => a.Rating) });
+            foreach (var data in result)
+            {
+                Console.WriteLine("Product Id:{0} => Average Rating :{1}", data.products, data.Count);
+            }
+        }
     }
 }
